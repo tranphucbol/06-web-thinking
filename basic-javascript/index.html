@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Gallery</title>
+</head>
+
+<body>
+    <div class="container-center d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-header">
+                    Image Gallery
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <div class="input-group file-group">
+                            <input type="text" id="count" class="form-control" readonly>
+                            <label>
+                                <span class="btn btn-primary">
+                                    Browse&hellip; <input type="file" style="display: none;" onchange="readURL(this)" multiple>
+                                </span>
+                            </label>
+
+                        </div>
+                        <!-- <button class="btn btn-primary">Clear</button> -->
+                    </div>
+                    <div class="">
+                        <div class="row-img">
+                            <div class="column-img">
+                                <!-- <img src="images/img-1.jpg">
+                                <img src="images/img-2.jpg"> -->
+                            </div>
+                            <div class="column-img">
+                                <!-- <img src="images/img-3.png">
+                                <img src="images/img-4.jpg"> -->
+                            </div>
+                            <div class="column-img">
+                                <!-- <img src="images/img-5.jpg">
+                                <img src="images/img-6.jpg"> -->
+                            </div>
+                            <div class="column-img">
+                                <!-- <img src="images/img-7.png">
+                                <img src="images/img-8.jpg"> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer py-3 px-3 d-flex align-items-end flex-column">
+                    <button class="btn btn-danger" id="btn-clear">Clear</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

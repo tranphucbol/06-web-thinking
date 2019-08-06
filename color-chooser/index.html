@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Chooser</title>
+</head>
+
+<body>
+
+    <div class="container-center d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-header">
+                    Color Chooser
+                </div>
+                <div class="card-body">
+                    <div class="row justify-content-around align-items-center">
+                        <div class="col-8">
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="red w-100" value="0" max="255">
+                                <b class="ml-3 red-text" style="color:red; width: 50px">0</b>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="green w-100" value="0" max="255">
+                                <b class="ml-3 green-text" style="color:green; width: 50px">0</b>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <input type="range" class="blue w-100" value="0" max="255">
+                                <b class="ml-3 blue-text" style="color:blue; width: 50px">0</b>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="color-preview">
+
+                            </div>
+                            <div class="color-preview-text">#000000</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+body {
+    font-family: 'Blinker', sans-serif;
+}
+
+.container-center {
+    background-color: #EDF2F9;
+    height: 100vh;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.card {
+    border: 1px solid #edf2f9;
+    border-radius: 7px;
+    border-color: #edf2f9;
+}
+
+.card .card-header {
+    background: #F9FAFD;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.7rem;
+    border-radius: 7px 7px 0 0;
+    border-color: #edf2f9;
+
+}
+
+.card .card-footer {
+    background: #F9FAFD;
+    /* border: none; */
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.7rem;
+    border-radius: 0 0 7px 7px;
+    border-color: #edf2f9;
+}
+
+.row-img {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* Create four equal columns that sits next to each other */
+.column-img {
+    -ms-flex: 25%;
+    /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column-img img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid #EDF2F9;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column-img {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column-img {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.file-group input[type=text] {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-right: 0;
+}
+
+.file-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
