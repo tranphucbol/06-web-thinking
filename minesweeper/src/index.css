@@ -1,15 +1,20 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Blinker', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #669899;
 }
 
 .board {
@@ -19,6 +24,94 @@ code {
 
 .row {
   display: flex;
+  margin-bottom: 5px;
+}
+
+.row:last-child {
+  margin: 0;
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #033;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 4px solid #033;
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+  /* background: #ccc; */
+  background: rgb(116, 116, 116);
+
+  cursor: pointer;
+}
+
+.tile.open.bomb {
+  background: rgb(235, 71, 71);
+}
+
+.tile.open {
+  background: #ccc;
+  /* background: rgb(116, 116, 116); */
+}
+
+.tile:last-child {
+  margin-right: 0;
+}
+
+.wrapper-center {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.generate-form {
+  margin-bottom: 10px;
+}
+
+.generate-form label{
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #033;
+  margin-right: 8px;
+}
+
+.generate-form input {
+  border-radius: 5px;
+  border: 4px solid #033;
+  width: 70px;
+  background: #ccc;
+  font-weight: bold;
+  color: #033;
+  margin-right: 8px;
+  outline: 0;
+  padding: 0 5px;
+}
+
+.btn-game {
+  border-radius: 5px;
+  border: 4px solid #033;
+  background: #033;
+  font-weight: bold;
+  color: #ccc;
+  font-size: 0.9rem;
+  /* border: 0; */
+}
+
+.title-game {
+  display: flex;
+  align-items: center;
+}
+
+.title-game h1 {
+  color: #033;
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 

@@ -1,8 +1,8 @@
-const generate = (size, bomb) => {
+const generate = (size, bomb, mode) => {
     let tiles = [];
     for(let i = 0; i < size * size; i++)
         tiles.push({
-            status: false,
+            status: mode,
             value: 0
         });
     for(let i = 0; i < bomb; i++) {
@@ -10,8 +10,8 @@ const generate = (size, bomb) => {
     }
     
     generateNumber(tiles);
-    console.log(tiles);
-    return {size, bomb, tiles};
+    // console.log(tiles);
+    return {size, bomb, tiles, mode};
 }
 
 const generateBomb = (tiles, bomb) => {
@@ -44,8 +44,51 @@ const generateNumber = (tiles) => {
     }
 }
 
-const boards = (state = generate(8, 8), action) => {
-    switch (action) {
+const openTile = (tiles, id) => {
+    if(tiles[id].value === -1) {
+        for(let i = 0; i < tiles.length; i++) {
+            tiles[i].status = true
+        }
+    } else if (tiles[id].value === 0) {
+        let size = Math.floor(Math.sqrt(tiles.length))
+        let i = Math.floor(id / size)
+        let j = id % size
+        tiles[id].status = true
+        for(let k = 0; k < 9; k++) {
+            let ik = i + x[k]
+            let jk = j + y[k]
+            if(ik >= 0 && ik < size && jk >= 0 && jk < size && !tiles[ik * size + jk].status) {
+                if(tiles[ik * size + jk].value === 0)
+                    openTile(tiles, ik * size + jk)
+                else if (tiles[ik * size + jk].value > 0) {
+                    tiles[ik* size + jk].status = true
+                }
+            }
+        }
+    } else {
+        tiles[id].status = true
+    }
+    return tiles
+}
+
+const showAll = (tiles, mode) => {
+    for(let i = 0; i < tiles.length; i++) {
+        tiles[i].status = mode
+    }
+    return tiles
+}
+
+const boards = (state = generate(8, 8, false), action) => {
+    switch (action.type) {
+        case 'GENERATE':
+            return generate(action.size, action.bomb, state.mode);
+        case 'OPEN':
+            let newState = Object.assign({}, state, {
+                tiles: openTile([...state.tiles], action.id)
+            })
+            return newState
+        case 'MODE':
+            return Object.assign({}, state, {tiles: showAll([...state.tiles], !state.mode), mode: !state.mode})
         default:
             return state
     }

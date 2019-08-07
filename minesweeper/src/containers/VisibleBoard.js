@@ -1,8 +1,8 @@
 import {connect} from 'react-redux'
+import {openTile} from '../actions/index'
 import Board from '../components/Board'
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         size: state.boards.size,
         bomb: state.boards.bomb,
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-
+    onTileClick: id => dispatch(openTile(id))
 })
   
 

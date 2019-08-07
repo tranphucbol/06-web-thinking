@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Tile from './Tile'
 
-const generateBoard = (size, tiles) => {
+const generateBoard = (size, tiles, onTileClick) => {
     let board = [];
     for(let i = 0; i < size; i++) {
         let row = [];
         for(let j = 0; j < size; j++) {
             let k = i * size + j;
-            row.push(<Tile status={tiles[k].status} value={tiles[k].value} />)
+            row.push(<Tile key={k} status={tiles[k].status} value={tiles[k].value} onClick={() => onTileClick(k)} />)
         }
         board.push(
-            <div className="row">
+            <div key={i} className="row">
                 {row}
             </div>
         );
@@ -19,9 +19,9 @@ const generateBoard = (size, tiles) => {
     return board;
 }
 
-const Board = ({size, bomb, tiles}) => (
+const Board = ({size, bomb, tiles, onTileClick}) => (
     <div className="board">
-        {generateBoard(size, tiles)}
+        {generateBoard(size, tiles, onTileClick)}
     </div>
 )
 
@@ -33,7 +33,8 @@ Board.propTypes = {
             status: PropTypes.bool.isRequired,
             value: PropTypes.number.isRequired
         })
-    )
+    ),
+    onTileClick: PropTypes.func.isRequired
 }
 
 export default Board
