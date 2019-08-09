@@ -8,3 +8,8 @@ export const openTile = id => ({
     type: 'OPEN',
     id
 })
+
+export const flagTile = id => ({
+    type: 'FLAG',
+    id
+})

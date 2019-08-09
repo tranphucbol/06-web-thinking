@@ -62,9 +62,9 @@ class GenerateForm extends React.Component {
             <form className="generate-form"
                 onSubmit={this.handleSubmit}>
                 <label>Size</label>
-                <input value={this.state.inputSize} onChange={this.handleSizeChange}/>
+                <input type="number" min="1" value={this.state.inputSize} onChange={this.handleSizeChange}/>
                 <label>Bomb</label>
-                <input value={this.state.inputBomb} onChange={this.handleBombChange} />
+                <input type="number" min="1" value={this.state.inputBomb} onChange={this.handleBombChange} />
                 <button className="btn-game" type="submit">Generate</button>
             </form>
         )

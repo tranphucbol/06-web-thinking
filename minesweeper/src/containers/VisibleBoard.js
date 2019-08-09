@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {openTile} from '../actions/index'
+import {openTile, flagTile} from '../actions/index'
 import Board from '../components/Board'
 
 const mapStateToProps = state => {
@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    onTileClick: id => dispatch(openTile(id))
+    onTileClick: id => dispatch(openTile(id)),
+    onFlagClick: id => dispatch(flagTile(id))
 })
   
 

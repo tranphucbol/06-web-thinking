@@ -1,7 +1,7 @@
 function showColor() {
-    var r = document.querySelector('.red-text').innerText;
-    var g = document.querySelector('.green-text').innerText;
-    var b = document.querySelector('.blue-text').innerText;
+    var r = document.querySelector('#red .text').innerText;
+    var g = document.querySelector('#green .text').innerText;
+    var b = document.querySelector('#blue .text').innerText;
     document.querySelector('.color-preview').style.background = `rgb(${r}, ${g}, ${b})`;
     document.querySelector('.color-preview-text').innerHTML = `#${hexColor(r)}${hexColor(g)}${hexColor(b)}`;
 }
@@ -13,17 +13,17 @@ function hexColor(value) {
 
 showColor();
 
-document.querySelector('input[type=range]').addEventListener('input', function(e) {
-    document.querySelector('.red-text').innerText = e.target.value;
+document.querySelector('#red input[type=range]').addEventListener('input', function(e) {
+    document.querySelector('#red .text').innerText = e.target.value;
     showColor();
 });
 
-document.querySelector('.green').addEventListener('input', function(e) {
-    document.querySelector('.green-text').innerText = e.target.value;
+document.querySelector('#green input[type=range]').addEventListener('input', function(e) {
+    document.querySelector('#green .text').innerText = e.target.value;
     showColor();
 });
 
-document.querySelector('.blue').addEventListener('input', function(e) {
-    document.querySelector('.blue-text').innerText = e.target.value;
+document.querySelector('#blue input[type=range]').addEventListener('input', function(e) {
+    document.querySelector('#blue .text').innerText = e.target.value;
     showColor();
 });
