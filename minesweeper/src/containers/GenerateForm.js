@@ -49,9 +49,9 @@ class GenerateForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        if(!this.state.inputSize.trim() && this.state.inputBomb.trim()) {
-            return
-        }
+        // if(!this.state.inputSize.trim() && !this.state.inputBomb.trim()) {
+           
+        // }
         let size = parseInt(this.state.inputSize)
         let bomb = parseInt(this.state.inputBomb)
         this.props.sumbitForm(size, bomb)
